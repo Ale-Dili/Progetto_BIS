@@ -20,9 +20,9 @@ def plot_cdf(data, img_path=None, title='Cumulative Distribution Function (CDF)'
     ax.plot(data_sorted, cdf, marker='.', linestyle='-', color='b', label='CDF')
     
 
-    ax.set_title(title, fontsize=16)
-    ax.set_xlabel(xlabel, fontsize=14)
-    ax.set_ylabel(ylabel, fontsize=14)
+    ax.set_title(title, fontsize=16,weight='bold')
+    ax.set_xlabel(xlabel, fontsize=14,weight='bold')
+    ax.set_ylabel(ylabel, fontsize=14,weight='bold')
     
     ax.grid(True, which='both', linestyle='--', linewidth=0.5)
     
@@ -48,15 +48,14 @@ def plot_value_counts(data, column_name, img_path=None):
 
     plt.figure(figsize=(12, 8))
     
-
     value_counts = data[column_name].value_counts()
     sns.barplot(x=value_counts.index, y=value_counts.values, palette="viridis")
 
     plt.title(f'Value Counts of {column_name}', fontsize=16)
-    plt.xlabel(column_name, fontsize=14)
-    plt.ylabel('Counts', fontsize=14)
+    plt.xlabel(column_name, fontsize=14, weight='bold')
+    plt.ylabel('Counts', fontsize=20, weight='bold')
     
-    plt.xticks(rotation=45, ha='right', fontsize=12)
+    plt.xticks(rotation=45, ha='right', fontsize=20, weight='bold')
 
     for index, value in enumerate(value_counts.values):
         plt.text(index, value, str(value), ha='center', va='bottom', fontsize=10)
